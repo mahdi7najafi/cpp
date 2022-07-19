@@ -1,0 +1,74 @@
+#------------------------------------------------------------------------------------------------------- Selection Sort	
+
+	    int[] arr = new int[] {6,3,2,1,5,7,8,10,12,11,15,19,4,20,9,13,17,16,14,18};
+
+            Console.WriteLine("-------------------------------------------------------");
+            for(int i=0;i<arr.Length-1;i++)
+            {
+                int idx_sm = i;
+                for(int j=i+1;j<arr.Length;j++)
+                {
+                    if (arr[j] < arr[idx_sm])
+                    {
+                        idx_sm = j;
+                    }
+                }
+                var tmp = arr[i];
+
+                arr[i] = arr[idx_sm];
+                arr[idx_sm] = tmp;
+            }
+            foreach (var i in arr)
+            {
+                Console.WriteLine(i);
+            }
+
+
+#------------------------------------------------------------------------------------------------------- Insertion Sort
+  	    int[] arr = new int[] {6,3,2,1,5,7,8,10,12,11,15,19,4,20,9,13,17,16,14,18};
+
+            Console.WriteLine("-------------------------------------------------------");
+
+            for(int i = 0; i < arr.Length- 1; i++)
+            {
+                for(int j= i+1; j > 0; j--)
+                {
+                    if(arr[j-1] > arr[j])
+                    {
+                        var tmp = arr[j];
+                        arr[j] = arr[j-1];
+                        arr[j-1] = tmp;
+                    }
+                }
+            }
+
+            //-------------------- Printing ----------------------
+            foreach (var i in arr)
+            {
+                Console.WriteLine(i);
+            }
+
+
+
+#------------------------------------------------------------------------------------------------------- Leetcode exercise
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
+
+            for (int i = 0; i < nums.Length-1; i++)
+            {
+                for(int j = i + 1; j < nums.Length; j++)
+                {
+                    if (nums[i]+nums[j] == target)
+                    {
+                        return new int[]{i,j};
+                        
+                        
+                    }
+                }
+            }
+       return null;
+
+    }
+}
+
+#------------------------------------------------------------------------------------------------------- Linked List
